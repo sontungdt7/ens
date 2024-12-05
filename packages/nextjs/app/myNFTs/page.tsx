@@ -12,36 +12,39 @@ import nftsMetadata from "~~/utils/simpleNFT/nftsMetadata";
 const MyNFTs: NextPage = () => {
   const { address: connectedAddress, isConnected, isConnecting } = useAccount();
 
-  const { writeContractAsync } = useScaffoldWriteContract("YourCollectible");
+  const { writeContractAsync } = useScaffoldWriteContract("ENS");
 
   const { data: tokenIdCounter } = useScaffoldReadContract({
-    contractName: "YourCollectible",
-    functionName: "tokenIdCounter",
+    contractName: "ENS",
+    functionName: "tokenCounter",
     watch: true,
   });
 
   const handleMintItem = async () => {
     // circle back to the zero item if we've reached the end of the array
+    console.log("handleMintItem:", tokenIdCounter);
     if (tokenIdCounter === undefined) return;
+    console.log("handleMintItem");
 
     const tokenIdCounterNumber = Number(tokenIdCounter);
     const currentTokenMetaData = nftsMetadata[tokenIdCounterNumber % nftsMetadata.length];
-    const notificationId = notification.loading("Uploading to IPFS");
+    const notificationId = notification.loading("Minting...");
     try {
-      const uploadedItem = await addToIPFS(currentTokenMetaData);
-
-      // First remove previous loading notification and then show success notification
-      notification.remove(notificationId);
-      notification.success("Metadata uploaded to IPFS");
+      // const uploadedItem = await addToIPFS(currentTokenMetaData);      
 
       await writeContractAsync({
-        functionName: "mintItem",
-        args: [connectedAddress, uploadedItem.path],
+        functionName: "mint",        
       });
+      // First remove previous loading notification and then show success notification
+      notification.remove(notificationId);
+      notification.success("Mint Success");
+
     } catch (error) {
       notification.remove(notificationId);
       console.error(error);
     }
+
+    
   };
 
   return (
@@ -49,7 +52,7 @@ const MyNFTs: NextPage = () => {
       <div className="flex items-center flex-col pt-10">
         <div className="px-5">
           <h1 className="text-center mb-8">
-            <span className="block text-4xl font-bold">My NFTs</span>
+            <span className="block text-4xl font-bold">Ethereum's North Star NFT Collection</span>
           </h1>
         </div>
       </div>
@@ -58,7 +61,7 @@ const MyNFTs: NextPage = () => {
           <RainbowKitCustomConnectButton />
         ) : (
           <button className="btn btn-secondary" onClick={handleMintItem}>
-            Mint NFT
+            Free Mint NFT
           </button>
         )}
       </div>

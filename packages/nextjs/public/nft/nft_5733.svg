@@ -1,0 +1,75 @@
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="600" height="600">
+      <!-- Background -->
+      <rect width="600" height="600" fill="#C6E8E8" />
+      <g transform="translate(50,50)">
+        <!-- Left Half -->
+        <defs>
+          <clipPath id="lefhalf">
+            <rect x="0" y="0" width="250" height="500"/>
+          </clipPath>
+        </defs>
+        <circle cx="250" cy="250" r="250" fill="#FFCDD2" clip-path="url(#lefhalf)" />
+        
+        <!-- Right Half -->
+        <defs>
+          <clipPath id="righthalf">
+            <rect x="250" y="0" width="250" height="500"/>
+          </clipPath>
+        </defs>
+        <circle cx="250" cy="250" r="250" fill="#311B92" clip-path="url(#righthalf)" />
+        
+        <!-- Small circles -->
+        <circle cx="250" cy="125" r="125" fill="#FFCDD2" />
+        <circle cx="250" cy="375" r="125" fill="#311B92" />
+        <circle cx="250" cy="125" r="35" fill="#311B92" />
+        <circle cx="250" cy="375" r="35" fill="#FFCDD2" />
+
+        <rect x="235" y="109" width="30" height="3" z="10" fill="#FFCDD2" />
+        <rect x="237" y="124" width="26" height="3" z="10" fill="#FFCDD2" />
+        <rect x="235" y="139" width="30" height="3" z="10" fill="#FFCDD2" />
+
+        
+        <!-- Microchip in lower circle -->
+        <rect x="235" y="360" width="30" height="30" fill="#311B92" />
+        
+        <rect x="225" y="366" width="50" height="2" fill="#311B92" />
+        <rect x="225" y="370" width="50" height="2" fill="#311B92" />
+        <rect x="225" y="374" width="50" height="2" fill="#311B92" />
+        <rect x="225" y="378" width="50" height="2" fill="#311B92" />
+        <rect x="225" y="382" width="50" height="2" fill="#311B92" />
+        
+        <rect x="249" y="350" width="2" height="50" fill="#311B92" />
+        <rect x="253" y="350" width="2" height="50" fill="#311B92" />
+        <rect x="257" y="350" width="2" height="50" fill="#311B92" />
+        <rect x="245" y="350" width="2" height="50" fill="#311B92" />
+        <rect x="241" y="350" width="2" height="50" fill="#311B92" />
+
+        <rect x="240" y="365" width="20" height="20" fill="none" stroke="#FFCDD2"/>
+
+             <!-- Define the S-shaped path for the text -->
+        <defs>
+          <path id="s-curve" d="
+            M280,20
+            A240,240 0 0,1 150,500        
+          " fill="none" stroke="none"/>
+        </defs>
+
+        <!-- Define a reversed S-shaped path for the second text -->
+        <defs>
+          <path id="s-curve-reverse" d="
+            M50,350
+            A240,240 0 0,1 300,30
+          " fill="none" stroke="none"/>
+        </defs>
+        
+        <!-- Text -->
+        <text font-size="30" fill="#FFCDD2">
+          <textPath href="#s-curve" startOffset="30%">ETH is money</textPath>
+        </text>
+        <text font-size="24" fill="#311B92">
+          <textPath href="#s-curve-reverse" startOffset="10%">Ethereum is the world computer</textPath>
+        </text>
+      </g>
+    </svg>
+    

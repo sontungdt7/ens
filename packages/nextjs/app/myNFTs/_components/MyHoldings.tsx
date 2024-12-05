@@ -5,13 +5,12 @@ import { NFTCard } from "./NFTCard";
 import { useAccount } from "wagmi";
 import { useScaffoldContract, useScaffoldReadContract } from "~~/hooks/scaffold-eth";
 import { notification } from "~~/utils/scaffold-eth";
-import { getMetadataFromIPFS } from "~~/utils/simpleNFT/ipfs-fetch";
-import { NFTMetaData } from "~~/utils/simpleNFT/nftsMetadata";
 
-export interface Collectible extends Partial<NFTMetaData> {
+export interface Collectible {
   id: number;
   uri: string;
   owner: string;
+  svgImage: string; // Add a field for the SVG image
 }
 
 export const MyHoldings = () => {
@@ -20,11 +19,11 @@ export const MyHoldings = () => {
   const [allCollectiblesLoading, setAllCollectiblesLoading] = useState(false);
 
   const { data: yourCollectibleContract } = useScaffoldContract({
-    contractName: "YourCollectible",
+    contractName: "ENS",
   });
 
   const { data: myTotalBalance } = useScaffoldReadContract({
-    contractName: "YourCollectible",
+    contractName: "ENS",
     functionName: "balanceOf",
     args: [connectedAddress],
     watch: true,
@@ -38,6 +37,7 @@ export const MyHoldings = () => {
       setAllCollectiblesLoading(true);
       const collectibleUpdate: Collectible[] = [];
       const totalBalance = parseInt(myTotalBalance.toString());
+
       for (let tokenIndex = 0; tokenIndex < totalBalance; tokenIndex++) {
         try {
           const tokenId = await yourCollectibleContract.read.tokenOfOwnerByIndex([
@@ -46,17 +46,20 @@ export const MyHoldings = () => {
           ]);
 
           const tokenURI = await yourCollectibleContract.read.tokenURI([tokenId]);
+          console.log("token URI", tokenURI);
 
-          const ipfsHash = tokenURI.replace("https://ipfs.io/ipfs/", "");
-
-          const nftMetadata: NFTMetaData = await getMetadataFromIPFS(ipfsHash);
+          // Parse metadata directly from the tokenURI
+          const metadataJSON = atob(tokenURI.split(",")[1]); // Decode the base64 JSON
+          const metadata = JSON.parse(metadataJSON);
 
           collectibleUpdate.push({
             id: parseInt(tokenId.toString()),
             uri: tokenURI,
             owner: connectedAddress,
-            ...nftMetadata,
+            svgImage: metadata.image, // Extract the SVG data
           });
+
+          console.log("svgImage", metadata.image);
         } catch (e) {
           notification.error("Error fetching all collectibles");
           setAllCollectiblesLoading(false);
