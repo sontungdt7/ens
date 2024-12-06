@@ -30,7 +30,7 @@ const Home = () => {
 
         const svg = `
           <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 600 600">
-            <rect width="600" height="600" fill="${bg}" />
+            <rect width="600" height="600" fill="${right}" />
             <g transform="translate(50,50)">
               <defs>
                 <clipPath id="lefhalf-${i}">
@@ -38,35 +38,71 @@ const Home = () => {
                 </clipPath>
               </defs>
               <circle cx="250" cy="250" r="250" fill="${left}" clip-path="url(#lefhalf-${i})" />
+
+                 <defs>
+                  <filter id="f1" x="-10%" y="-10%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+                  </filter>
+                </defs>
+                <circle cx="252" cy="250" r="250" fill="${left}"  filter="url(#f1)"/>
+
+
+
               <defs>
                 <clipPath id="righthalf-${i}">
                   <rect x="250" y="0" width="250" height="500"/>
                 </clipPath>
               </defs>
               <circle cx="250" cy="250" r="250" fill="${right}" clip-path="url(#righthalf-${i})" />
+              
               <circle cx="250" cy="125" r="125" fill="${left}" />
               <circle cx="250" cy="375" r="125" fill="${right}" />
               <circle cx="250" cy="125" r="35" fill="${right}" />
               <circle cx="250" cy="375" r="35" fill="${left}" />
 
+              //ETH Money Symbol
+              '<rect x="235" y="109" width="30" height="3" z="10" fill="${left}" />',
+              '<rect x="237" y="124" width="26" height="3" z="10" fill="${left}" />',
+              '<rect x="235" y="139" width="30" height="3" z="10" fill="${left}" />',
+
+              // Microchip in lower circle
+              '<rect x="235" y="360" width="30" height="30" fill="${right}"/>',     
+                         
+              '<rect x="230" y="366" width="40" height="2" fill="${right}"/>',
+              '<rect x="230" y="370" width="40" height="2" fill="${right}"/>',
+              '<rect x="230" y="374" width="40" height="2" fill="${right}"/>',
+              '<rect x="230" y="378" width="40" height="2" fill="${right}"/>',
+              '<rect x="230" y="382" width="40" height="2" fill="${right}"/>',
+              
+              '<rect x="249" y="355" width="2" height="40" fill="${right}"/>',
+              '<rect x="253" y="355" width="2" height="40" fill="${right}"/>',
+              '<rect x="257" y="355" width="2" height="40" fill="${right}"/>',
+              '<rect x="245" y="355" width="2" height="40" fill="${right}"/>',
+              '<rect x="241" y="355" width="2" height="40" fill="${right}"/>',
+
+              '<rect x="240" y="365" width="20" height="20" fill="none" stroke="${left}"/>',
+              
+
+
+
+              <!-- Define the S-shaped path for the text -->
               <defs>
                 <path id="s-curve" d="
-                  M280,20
-                  A240,240 0 0,1 150,500        
+                  M290,20
+                  A240,240 0 0,1 290,480        
                 " fill="none" stroke="none"/>
               </defs>
 
-              <!-- Define a reversed S-shaped path for the second text -->
+              <text font-size="28" fill="${left}">
+                <textPath href="#s-curve" startOffset="30%">ETH is money</textPath>
+              </text>
+
               <defs>
                 <path id="s-curve-reverse" d="
                   M50,350
-                  A240,240 0 0,1 300,30
+                  A240,240 0 0,1 300,33
                 " fill="none" stroke="none"/>
               </defs>
-
-              <text font-size="30" fill="${left}">
-                <textPath href="#s-curve" startOffset="30%">ETH is money</textPath>
-              </text>
               <text font-size="24" fill="${right}">
                 <textPath href="#s-curve-reverse" startOffset="10%">Ethereum is the world computer</textPath>
               </text>
@@ -85,12 +121,14 @@ const Home = () => {
 
   return (
     <div className="flex flex-col items-center py-10">
-      <div className="w-full px-5">
+      <div className="w-full px-5">        
         <h1 className="text-center mb-6">
-          <span className="block text-4xl font-bold">Ethereum's North Star NFT Collection.</span>
-          <a href="/myNFTs" className="block text-4xl font-bold underline">Free Mint</a>
-
+        <span className="block text-center text-4xl ">Ethereum Vision NFT Collection.</span>
+          <span className="block text-2xl font-bold">100% Onchain. 100% Free. 10,000 Max Supply.</span>          
+          <span className="block text-2xl font-bold">Minters earn 50% royalty fee forever.</span>  
+          <a href="/myNFTs" className="block text-4xl font-bold underline">Free Mint NOW</a>        
         </h1>
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {nftImages.map((svg, index) => (
             <div

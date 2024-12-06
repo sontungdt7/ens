@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
+  HomeIcon,
   ArrowDownTrayIcon,
   ArrowPathIcon,
   ArrowUpTrayIcon,
@@ -23,7 +24,13 @@ type HeaderMenuLink = {
 
 export const menuLinks: HeaderMenuLink[] = [
   {
-    label: "Mint",
+    label: "Home",
+    href: "/",
+    icon: <HomeIcon className="h-4 w-4" />,
+  },
+
+  {
+    label: "Free Mint",
     href: "/myNFTs",
     icon: <PhotoIcon className="h-4 w-4" />,
   },

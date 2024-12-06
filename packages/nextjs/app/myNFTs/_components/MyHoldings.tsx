@@ -19,11 +19,11 @@ export const MyHoldings = () => {
   const [allCollectiblesLoading, setAllCollectiblesLoading] = useState(false);
 
   const { data: yourCollectibleContract } = useScaffoldContract({
-    contractName: "ENS",
+    contractName: "EthereumVision",
   });
 
   const { data: myTotalBalance } = useScaffoldReadContract({
-    contractName: "ENS",
+    contractName: "EthereumVision",
     functionName: "balanceOf",
     args: [connectedAddress],
     watch: true,

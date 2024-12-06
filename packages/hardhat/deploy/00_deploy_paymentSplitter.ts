@@ -22,22 +22,36 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
   const { deployer } = await hre.getNamedAccounts();
   const { deploy } = hre.deployments;
 
-  await deploy("ENS", {
+  const result = await deploy("PaymentSplitterInitializable", {
     from: deployer,
     // Contract constructor arguments
-    args: [],
+    args: [      
+    ],
     log: true,
     // autoMine: can be passed to the deploy function to make the deployment process faster on local networks by
     // automatically mining the contract deployment transaction. There is no effect on live networks.
     autoMine: true,
   });
 
+  console.log("Verifying contract...");
+
+  // try {
+  //   await hre.run("verify:verify", {
+  //     address: result.address,
+  //     constructorArguments: [],
+  //   });
+
+  //   console.log("Contract verified successfully!");
+  // } catch (err) {
+  //   console.error("Verification failed:", err);
+  // }
+
   // Get the deployed contract to interact with it after deploying.
-  const yourCollectible = await hre.ethers.getContract<Contract>("ENS", deployer);
+  // const yourCollectible = await hre.ethers.getContract<Contract>("EthereumVision", deployer);
 };
 
 export default deployYourContract;
 
 // Tags are useful if you have multiple deploy files and only want to run one of them.
-// e.g. yarn deploy --tags ENS
-deployYourContract.tags = ["ENS"];
+// e.g. yarn deploy --tags PaymentSplitterInitializable
+deployYourContract.tags = ["PaymentSplitterInitializable"];

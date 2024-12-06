@@ -9,9 +9,9 @@ const baseUrl = process.env.VERCEL_URL
   : `http://localhost:${process.env.PORT || 3000}`;
 const imageUrl = `${baseUrl}/thumbnail.jpg`;
 
-const title = "Ethereum's North Star";
-const titleTemplate = "%s | Ethereum's North Star";
-const description = "Ethereum's North Star";
+const title = "Ethereum Vision";
+const titleTemplate = "%s | Ethereum Vision";
+const description = "Ethereum Vision";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),

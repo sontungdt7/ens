@@ -1443,6 +1443,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@limitbreak/creator-token-standards@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@limitbreak/creator-token-standards@npm:4.0.0"
+  dependencies:
+    "@limitbreak/permit-c": 1.0.0
+    "@openzeppelin/contracts": 4.8.3
+    erc721a: 4.2.3
+  checksum: de0e5ff1aab26a036b1f689378ffe22d655c59da42bc901160969acc5ab07f180c63c7bcc740740226bda6b9eaff4b9bbeace27c24e4684de6660bf3bb140355
+  languageName: node
+  linkType: hard
+
+"@limitbreak/permit-c@npm:1.0.0":
+  version: 1.0.0
+  resolution: "@limitbreak/permit-c@npm:1.0.0"
+  dependencies:
+    "@openzeppelin/contracts": 4.8.3
+  checksum: ebece17e80c60d45d8aaba371a2737478010b9c24575bc8d2117da132224561eb70ad9bcd92b2d1f39d96304ecb97f1228a654e7676ef6d0a2e523d5459bb50b
+  languageName: node
+  linkType: hard
+
 "@lit-labs/ssr-dom-shim@npm:^1.0.0":
   version: 1.0.0
   resolution: "@lit-labs/ssr-dom-shim@npm:1.0.0"
@@ -2355,6 +2375,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@openzeppelin/contracts@npm:4.8.3":
+  version: 4.8.3
+  resolution: "@openzeppelin/contracts@npm:4.8.3"
+  checksum: aea130d38d46840c5cbe3adbaa9a7ac645e4bd66ad3f3baf2fa78588c408d1a686170b3408c9e2e5e05530fba22ecdc00d7efb6b27852a8b29f91accbc0af255
+  languageName: node
+  linkType: hard
+
 "@openzeppelin/contracts@npm:^4.8.1":
   version: 4.9.5
   resolution: "@openzeppelin/contracts@npm:4.9.5"
@@ -2809,6 +2836,7 @@ __metadata:
   dependencies:
     "@ethersproject/abi": ^5.7.0
     "@ethersproject/providers": ^5.7.1
+    "@limitbreak/creator-token-standards": ^4.0.0
     "@nomicfoundation/hardhat-chai-matchers": ^2.0.3
     "@nomicfoundation/hardhat-ethers": ^3.0.5
     "@nomicfoundation/hardhat-network-helpers": ^1.0.6
@@ -7520,6 +7548,13 @@ __metadata:
   bin:
     envinfo: dist/cli.js
   checksum: 4c83a55768cf8b7e553155c29e7fa7bbdb0fb2c1156208efc373fc030045c6aca5e8e642e96027d3eb0c752156922ea3fca6183d9e13f38507f0e02ec82c23a1
+  languageName: node
+  linkType: hard
+
+"erc721a@npm:4.2.3":
+  version: 4.2.3
+  resolution: "erc721a@npm:4.2.3"
+  checksum: 0b2223678219d9b4a228da880cca9aab396ebe9cb59baf34a5501d4d9d297024d492ee5335c1983cd4c3bd15deef5e162c4837d27ac5ab5bf66e01591ead425c
   languageName: node
   linkType: hard
 
