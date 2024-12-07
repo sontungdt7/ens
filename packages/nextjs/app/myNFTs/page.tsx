@@ -48,9 +48,8 @@ const MyNFTs: NextPage = () => {
   return (
     <>      
       <div className="card w-full max-w-3xl mx-auto ">
-      <div className="card-body bg-base-100">
-        {/* <span className="block text-xl text-center">Minted: {tokenIdCounter?.toLocaleString()}/10,000 </span> */}
-        <h2 className="card-title text-center justify-center">Design Your Ethereum Vision</h2>
+      <div className="card-body">        
+        <h2 className="card-title text-center justify-center">Design your Ethereum</h2>
         <div className="flex flex-col  items-center justify-between gap-1">
           
           {/* Yin Yang Symbol */}
@@ -193,7 +192,7 @@ const MyNFTs: NextPage = () => {
           </div>        
         </div>        
         
-        
+        <span className="block text-xl text-center">Minted: {tokenIdCounter?.toLocaleString()}/10,000 </span>
         </div>
          
       </div>

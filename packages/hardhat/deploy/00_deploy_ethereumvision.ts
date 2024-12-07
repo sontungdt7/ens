@@ -27,8 +27,8 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
     // Contract constructor arguments
     args: [
       1000, //royaltyFeeNumerator_      
-      50, //minterShares_,
-      50, //creatorShares_,
+      40, //minterShares_,
+      60, //creatorShares_,
       deployer, //creator_,
       "0xb709D18D0b1f5904CD5Ce0d6dfD11839097f7Cdd", //paymentSplitterReference_,
       "Ethereum Vision", //memory name_,
@@ -42,16 +42,16 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
 
   console.log("Verifying contract...");
 
-  // try {
-  //   await hre.run("verify:verify", {
-  //     address: result.address,
-  //     constructorArguments: [1000, 50, 50, deployer, deployer, "Ethereum Vision", "ETHV"],
-  //   });
+  try {
+    await hre.run("verify:verify", {
+      address: result.address,
+      constructorArguments: [1000, 40, 60, deployer, "0xb709D18D0b1f5904CD5Ce0d6dfD11839097f7Cdd", "Ethereum Vision", "ETHV"],
+    });
 
-  //   console.log("Contract verified successfully!");
-  // } catch (err) {
-  //   console.error("Verification failed:", err);
-  // }
+    console.log("Contract verified successfully!");
+  } catch (err) {
+    console.error("Verification failed:", err);
+  }
 
   // Get the deployed contract to interact with it after deploying.
   // const yourCollectible = await hre.ethers.getContract<Contract>("EthereumVision", deployer);

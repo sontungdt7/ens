@@ -3444,7 +3444,7 @@ const deployedContracts = {
       },
     },
     EthereumVision: {
-      address: "0xB0F0C0B8B8D4a8FFb5C57a274aF608981ba11Cc4",
+      address: "0x5C5288F1260F2D13911646fED8791F7bB6b33cC0",
       abi: [
         {
           inputs: [

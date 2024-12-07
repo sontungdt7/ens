@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   HomeIcon,
+  LinkIcon,
   ArrowDownTrayIcon,
   ArrowPathIcon,
   ArrowUpTrayIcon,
@@ -20,6 +21,7 @@ type HeaderMenuLink = {
   label: string;
   href: string;
   icon?: React.ReactNode;
+  external: boolean;
 };
 
 export const menuLinks: HeaderMenuLink[] = [
@@ -27,12 +29,21 @@ export const menuLinks: HeaderMenuLink[] = [
     label: "Home",
     href: "/",
     icon: <HomeIcon className="h-4 w-4" />,
+    external: false,
   },
 
   {
     label: "Free Mint",
     href: "/myNFTs",
     icon: <PhotoIcon className="h-4 w-4" />,
+    external: false,
+  },
+
+  {
+    label: "Collection on Opensea",
+    href: "https://testnets.opensea.io/collection/ethereum-vision-10",
+    icon: <LinkIcon className="h-4 w-4" />,
+    external: true,
   },
   // {
   //   label: "Transfers",
@@ -61,26 +72,40 @@ export const HeaderMenuLinks = () => {
 
   return (
     <>
-      {menuLinks.map(({ label, href, icon }) => {
-        const isActive = pathname === href;
+      {menuLinks.map(({ label, href, icon, external }) => {
+        const isActive = pathname === href && !external;
+
         return (
           <li key={href}>
-            <Link
-              href={href}
-              passHref
-              className={`${
-                isActive ? "bg-secondary shadow-md" : ""
-              } hover:bg-secondary hover:shadow-md focus:!bg-secondary active:!text-neutral py-1.5 px-3 text-sm rounded-full gap-2 grid grid-flow-col`}
-            >
-              {icon}
-              <span>{label}</span>
-            </Link>
+            {external ? (
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:bg-secondary hover:shadow-md focus:!bg-secondary active:!text-neutral py-1.5 px-3 text-sm rounded-full gap-2 grid grid-flow-col"
+              >
+                {icon}
+                <span>{label}</span>
+              </a>
+            ) : (
+              <Link
+                href={href}
+                passHref
+                className={`${
+                  isActive ? "bg-secondary shadow-md" : ""
+                } hover:bg-secondary hover:shadow-md focus:!bg-secondary active:!text-neutral py-1.5 px-3 text-sm rounded-full gap-2 grid grid-flow-col`}
+              >
+                {icon}
+                <span>{label}</span>
+              </Link>
+            )}
           </li>
         );
       })}
     </>
   );
 };
+
 
 /**
  * Site header

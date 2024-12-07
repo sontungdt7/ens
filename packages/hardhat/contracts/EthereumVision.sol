@@ -59,10 +59,19 @@ contract EthereumVision is OwnableBasic, ERC721C, MinterCreatorSharedRoyalties {
         string memory svgImage = string(
             abi.encodePacked(
                 '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600">',
+                '<rect width="600" height="600" fill="', colors.rightHalf, '" />',
                 '<g transform="translate(50,50)">',
                 // Left Half
                 '<defs><clipPath id="lefthalf"><rect x="0" y="0" width="250" height="500"/></clipPath></defs>',
                 '<circle cx="250" cy="250" r="250" fill="', colors.leftHalf, '" clip-path="url(#lefthalf)"/>',
+
+                '<defs>',
+                    '<filter id="f1" x="-10%" y="-10%">',
+                        '<feGaussianBlur in="SourceGraphic" stdDeviation="10"/>',
+                    '</filter>',
+                '</defs>',
+                '<circle cx="252" cy="250" r="250" fill="', colors.leftHalf, '"  filter="url(#f1)"/>',
+
                 // Right Half
                 '<defs><clipPath id="righthalf"><rect x="250" y="0" width="250" height="500"/></clipPath></defs>',
                 '<circle cx="250" cy="250" r="250" fill="', colors.rightHalf, '" clip-path="url(#righthalf)"/>',
@@ -70,7 +79,48 @@ contract EthereumVision is OwnableBasic, ERC721C, MinterCreatorSharedRoyalties {
                 '<circle cx="250" cy="125" r="125" fill="', colors.leftHalf, '"/>',
                 '<circle cx="250" cy="375" r="125" fill="', colors.rightHalf, '" />',
                 '<circle cx="250" cy="125" r="35" fill="', colors.rightHalf, '"/>',
-                '<circle cx="250" cy="375" r="35" fill="', colors.leftHalf, '"/>',
+                // '<circle cx="250" cy="375" r="35" fill="', colors.leftHalf, '"/>',
+                
+
+                '<rect x="235" y="109" width="30" height="3" z="10" fill="', colors.leftHalf, '" />',
+                '<rect x="237" y="124" width="26" height="3" z="10" fill="', colors.leftHalf, '" />',
+                '<rect x="235" y="139" width="30" height="3" z="10" fill="', colors.leftHalf, '" />',
+
+                '<circle cx="250" cy="375" r="35" fill="', colors.leftHalf, '" />',
+                '<rect x="235" y="360" width="30" height="30" fill="', colors.rightHalf, '" />',
+                '<rect x="230" y="366" width="40" height="2" fill="', colors.rightHalf, '" />',
+                '<rect x="230" y="370" width="40" height="2" fill="', colors.rightHalf, '" />',
+                '<rect x="230" y="374" width="40" height="2" fill="', colors.rightHalf, '" />',
+                '<rect x="230" y="378" width="40" height="2" fill="', colors.rightHalf, '" />',
+                '<rect x="230" y="382" width="40" height="2" fill="', colors.rightHalf, '" />',
+
+                '<rect x="249" y="355" width="2" height="40" fill="', colors.rightHalf, '" />',
+                '<rect x="253" y="355" width="2" height="40" fill="', colors.rightHalf, '" />',
+                '<rect x="257" y="355" width="2" height="40" fill="', colors.rightHalf, '" />',
+                '<rect x="245" y="355" width="2" height="40" fill="', colors.rightHalf, '" />',
+                '<rect x="241" y="355" width="2" height="40" fill="', colors.rightHalf, '" />',
+                '<rect x="241" y="366" width="18" height="18" fill="none" stroke-width="2" stroke="', colors.leftHalf, '"/>',
+                
+
+                '<defs><path id="s-curve" d="M290,20 A240,240 0 0,1 290,480"  fill="none" stroke="none" /></defs>',
+                   
+                '<text font-size="28" fill="', colors.leftHalf, '">',
+                '<textPath href="#s-curve" startOffset="30%" >',
+                    'ETH is money',
+                '</textPath>',
+                '</text>',
+                
+                '<defs>',
+                    '<path id="s-curve-reverse" d="M50,350 A240,240 0 0,1 300,33"  fill="none" stroke="none" />',
+                '</defs>',
+                
+                '<text font-size="24" fill="', colors.rightHalf, '">',
+                '<textPath href="#s-curve-reverse" startOffset="10%">',
+                    'Ethereum is the world computer',
+                '</textPath>',
+                '</text>',
+
+
                 '</g>',
                 '</svg>'
             )
