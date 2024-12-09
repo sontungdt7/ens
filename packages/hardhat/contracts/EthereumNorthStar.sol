@@ -6,10 +6,10 @@ import "@limitbreak/creator-token-standards/src/access/OwnableBasic.sol";
 import "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol";
 import "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol";
 
-contract EthereumVision is OwnableBasic, ERC721C, MinterCreatorSharedRoyalties {
+contract EthereumNorthStar is OwnableBasic, ERC721C, MinterCreatorSharedRoyalties {
     using Strings for uint256;
 
-    uint256 public constant MAX_SUPPLY = 10000;
+    uint256 public constant MAX_SUPPLY = 7500;
     uint256 public tokenCounter = 0;
 
     mapping(address => uint256) public mintedTokens;
@@ -37,7 +37,7 @@ contract EthereumVision is OwnableBasic, ERC721C, MinterCreatorSharedRoyalties {
 
     function mint(string memory leftColor, string memory rightColor) public {
         require(tokenCounter < MAX_SUPPLY, "Max supply reached");
-        require(mintedTokens[msg.sender] < 3, "Max 3 NFTs per wallet");
+        require(mintedTokens[msg.sender] < 10, "Max 10 NFTs per wallet");
 
         bytes32 colorHash = keccak256(abi.encodePacked(leftColor, rightColor));
         require(!colorCombinations[colorHash], "Color combination already exists");
@@ -131,9 +131,9 @@ contract EthereumVision is OwnableBasic, ERC721C, MinterCreatorSharedRoyalties {
             bytes(
                 string(
                     abi.encodePacked(
-                        '{"name": "Ethereum Vision #',
+                        '{"name": "Ethereum North Star #',
                         tokenId.toString(),
-                        '", "description": "An on-chain Ethereum Vision NFT.", "image": "data:image/svg+xml;base64,',
+                        '", "description": "An onchain Ethereum North Star NFT.", "image": "data:image/svg+xml;base64,',
                         imageBase64,
                         '"}'
                     )

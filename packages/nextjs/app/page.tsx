@@ -123,9 +123,9 @@ const Home = () => {
     <div className="flex flex-col items-center py-10">
       <div className="w-full px-5">        
         <h1 className="text-center mb-6">
-        <span className="block text-center text-4xl font-bold">What is the Ethereum?</span>
+        <span className="block text-center text-4xl font-bold">What is the Ethereum North Star?</span>
         <span className="block text-center text-2xl">Let's mint your NFT to tell the world.</span>
-          <span className="block text-2xl ">10,000 Max Supply. Onchain Data. Minters earn 1/2 Royalty.</span>          
+          <span className="block text-2xl ">7500 Supply. Onchain Data. Free Mint.</span>
           <a href="/myNFTs" className="block text-4xl font-bold underline">Free Mint NOW</a>        
         </h1>
         

@@ -5,6 +5,1343 @@
 import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 
 const deployedContracts = {
+  8453: {
+    EthereumNorthStar: {
+      address: "0x50fBd0f15fE3B389D6B9c4C529c77AB3D5b6a11E",
+      abi: [
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "royaltyFeeNumerator_",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "minterShares_",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "creatorShares_",
+              type: "uint256",
+            },
+            {
+              internalType: "address",
+              name: "creator_",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "paymentSplitterReference_",
+              type: "address",
+            },
+            {
+              internalType: "string",
+              name: "name_",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "symbol_",
+              type: "string",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "constructor",
+        },
+        {
+          inputs: [],
+          name: "CreatorTokenBase__InvalidTransferValidatorContract",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "MinterCreatorSharedRoyalties__CreatorCannotBeZeroAddress",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "MinterCreatorSharedRoyalties__CreatorSharesCannotBeZero",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "MinterCreatorSharedRoyalties__MinterCannotBeZeroAddress",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "MinterCreatorSharedRoyalties__MinterHasAlreadyBeenAssignedToTokenId",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "MinterCreatorSharedRoyalties__MinterSharesCannotBeZero",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "MinterCreatorSharedRoyalties__PaymentSplitterDoesNotExistForSpecifiedTokenId",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "MinterCreatorSharedRoyalties__PaymentSplitterReferenceCannotBeZeroAddress",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "MinterCreatorSharedRoyalties__RoyaltyFeeWillExceedSalePrice",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "ShouldNotMintToBurnAddress",
+          type: "error",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "approved",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "Approval",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "operator",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "bool",
+              name: "approved",
+              type: "bool",
+            },
+          ],
+          name: "ApprovalForAll",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: false,
+              internalType: "bool",
+              name: "autoApproved",
+              type: "bool",
+            },
+          ],
+          name: "AutomaticApprovalOfTransferValidatorSet",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "previousOwner",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "newOwner",
+              type: "address",
+            },
+          ],
+          name: "OwnershipTransferred",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "from",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "Transfer",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: false,
+              internalType: "address",
+              name: "oldValidator",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "address",
+              name: "newValidator",
+              type: "address",
+            },
+          ],
+          name: "TransferValidatorUpdated",
+          type: "event",
+        },
+        {
+          inputs: [],
+          name: "DEFAULT_TRANSFER_VALIDATOR",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "FEE_DENOMINATOR",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "MAX_SUPPLY",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "approve",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "autoApproveTransfersFromValidator",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+          ],
+          name: "balanceOf",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "burn",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "creator",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "creatorShares",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "getApproved",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "getColors",
+          outputs: [
+            {
+              components: [
+                {
+                  internalType: "string",
+                  name: "leftHalf",
+                  type: "string",
+                },
+                {
+                  internalType: "string",
+                  name: "rightHalf",
+                  type: "string",
+                },
+              ],
+              internalType: "struct EthereumNorthStar.Colors",
+              name: "",
+              type: "tuple",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "getTransferValidationFunction",
+          outputs: [
+            {
+              internalType: "bytes4",
+              name: "functionSignature",
+              type: "bytes4",
+            },
+            {
+              internalType: "bool",
+              name: "isViewFunction",
+              type: "bool",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "getTransferValidator",
+          outputs: [
+            {
+              internalType: "address",
+              name: "validator",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "operator",
+              type: "address",
+            },
+          ],
+          name: "isApprovedForAll",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "isApproved",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "string",
+              name: "leftColor",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "rightColor",
+              type: "string",
+            },
+          ],
+          name: "mint",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          name: "mintedTokens",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "minterOf",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "minterShares",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "name",
+          outputs: [
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "owner",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "ownerOf",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "paymentSplitterOf",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "paymentSplitterReference",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "minter",
+              type: "address",
+            },
+          ],
+          name: "paymentSplittersOfMinter",
+          outputs: [
+            {
+              internalType: "address[]",
+              name: "",
+              type: "address[]",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "address",
+              name: "coin",
+              type: "address",
+            },
+            {
+              internalType: "enum MinterCreatorSharedRoyaltiesBase.ReleaseTo",
+              name: "releaseTo",
+              type: "uint8",
+            },
+          ],
+          name: "releasableERC20Funds",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "enum MinterCreatorSharedRoyaltiesBase.ReleaseTo",
+              name: "releaseTo",
+              type: "uint8",
+            },
+          ],
+          name: "releasableNativeFunds",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "address",
+              name: "coin",
+              type: "address",
+            },
+            {
+              internalType: "enum MinterCreatorSharedRoyaltiesBase.ReleaseTo",
+              name: "releaseTo",
+              type: "uint8",
+            },
+          ],
+          name: "releaseERC20Funds",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "enum MinterCreatorSharedRoyaltiesBase.ReleaseTo",
+              name: "releaseTo",
+              type: "uint8",
+            },
+          ],
+          name: "releaseNativeFunds",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "renounceOwnership",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "royaltyFeeNumerator",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "salePrice",
+              type: "uint256",
+            },
+          ],
+          name: "royaltyInfo",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "from",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "safeTransferFrom",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "from",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "bytes",
+              name: "data",
+              type: "bytes",
+            },
+          ],
+          name: "safeTransferFrom",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "operator",
+              type: "address",
+            },
+            {
+              internalType: "bool",
+              name: "approved",
+              type: "bool",
+            },
+          ],
+          name: "setApprovalForAll",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "bool",
+              name: "autoApprove",
+              type: "bool",
+            },
+          ],
+          name: "setAutomaticApprovalOfTransfersFromValidator",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "transferValidator_",
+              type: "address",
+            },
+          ],
+          name: "setTransferValidator",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "bytes4",
+              name: "interfaceId",
+              type: "bytes4",
+            },
+          ],
+          name: "supportsInterface",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "symbol",
+          outputs: [
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "tokenCounter",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "tokenURI",
+          outputs: [
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "from",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "transferFrom",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "newOwner",
+              type: "address",
+            },
+          ],
+          name: "transferOwnership",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+      ],
+      inheritedFunctions: {
+        owner:
+          "@limitbreak/creator-token-standards/src/access/OwnableBasic.sol",
+        renounceOwnership:
+          "@limitbreak/creator-token-standards/src/access/OwnableBasic.sol",
+        transferOwnership:
+          "@limitbreak/creator-token-standards/src/access/OwnableBasic.sol",
+        DEFAULT_TRANSFER_VALIDATOR:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        approve: "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        autoApproveTransfersFromValidator:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        balanceOf:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        getApproved:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        getTransferValidationFunction:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        getTransferValidator:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        isApprovedForAll:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        name: "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        ownerOf: "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        safeTransferFrom:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        setApprovalForAll:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        setAutomaticApprovalOfTransfersFromValidator:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        setTransferValidator:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        supportsInterface:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        symbol: "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        tokenURI: "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        transferFrom:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        FEE_DENOMINATOR:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        creator:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        creatorShares:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        minterOf:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        minterShares:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        paymentSplitterOf:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        paymentSplitterReference:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        paymentSplittersOfMinter:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        releasableERC20Funds:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        releasableNativeFunds:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        releaseERC20Funds:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        releaseNativeFunds:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        royaltyFeeNumerator:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        royaltyInfo:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+      },
+    },
+    PaymentSplitterInitializable: {
+      address: "0x13B8c8716d614aCC9E255044B4b6cDdCdA62e780",
+      abi: [
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "contract IERC20",
+              name: "token",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "amount",
+              type: "uint256",
+            },
+          ],
+          name: "ERC20PaymentReleased",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: false,
+              internalType: "address",
+              name: "account",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "shares",
+              type: "uint256",
+            },
+          ],
+          name: "PayeeAdded",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: false,
+              internalType: "address",
+              name: "from",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "amount",
+              type: "uint256",
+            },
+          ],
+          name: "PaymentReceived",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: false,
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "amount",
+              type: "uint256",
+            },
+          ],
+          name: "PaymentReleased",
+          type: "event",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address[]",
+              name: "payees",
+              type: "address[]",
+            },
+            {
+              internalType: "uint256[]",
+              name: "shares_",
+              type: "uint256[]",
+            },
+          ],
+          name: "initializePaymentSplitter",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "index",
+              type: "uint256",
+            },
+          ],
+          name: "payee",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "account",
+              type: "address",
+            },
+          ],
+          name: "releasable",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "contract IERC20",
+              name: "token",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "account",
+              type: "address",
+            },
+          ],
+          name: "releasable",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address payable",
+              name: "account",
+              type: "address",
+            },
+          ],
+          name: "release",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "contract IERC20",
+              name: "token",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "account",
+              type: "address",
+            },
+          ],
+          name: "release",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "contract IERC20",
+              name: "token",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "account",
+              type: "address",
+            },
+          ],
+          name: "released",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "account",
+              type: "address",
+            },
+          ],
+          name: "released",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "account",
+              type: "address",
+            },
+          ],
+          name: "shares",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "contract IERC20",
+              name: "token",
+              type: "address",
+            },
+          ],
+          name: "totalReleased",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "totalReleased",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "totalShares",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          stateMutability: "payable",
+          type: "receive",
+        },
+      ],
+      inheritedFunctions: {},
+    },
+  },
   31337: {
     ENS: {
       address: "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
@@ -1258,6 +2595,1031 @@ const deployedContracts = {
           "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol",
         totalSupply:
           "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol",
+      },
+    },
+    EthereumNorthStar: {
+      address: "0xEB6B6D6054cA3296c5da359d5784677A3A10443f",
+      abi: [
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "royaltyFeeNumerator_",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "minterShares_",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "creatorShares_",
+              type: "uint256",
+            },
+            {
+              internalType: "address",
+              name: "creator_",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "paymentSplitterReference_",
+              type: "address",
+            },
+            {
+              internalType: "string",
+              name: "name_",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "symbol_",
+              type: "string",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "constructor",
+        },
+        {
+          inputs: [],
+          name: "CreatorTokenBase__InvalidTransferValidatorContract",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "MinterCreatorSharedRoyalties__CreatorCannotBeZeroAddress",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "MinterCreatorSharedRoyalties__CreatorSharesCannotBeZero",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "MinterCreatorSharedRoyalties__MinterCannotBeZeroAddress",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "MinterCreatorSharedRoyalties__MinterHasAlreadyBeenAssignedToTokenId",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "MinterCreatorSharedRoyalties__MinterSharesCannotBeZero",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "MinterCreatorSharedRoyalties__PaymentSplitterDoesNotExistForSpecifiedTokenId",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "MinterCreatorSharedRoyalties__PaymentSplitterReferenceCannotBeZeroAddress",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "MinterCreatorSharedRoyalties__RoyaltyFeeWillExceedSalePrice",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "ShouldNotMintToBurnAddress",
+          type: "error",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "approved",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "Approval",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "operator",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "bool",
+              name: "approved",
+              type: "bool",
+            },
+          ],
+          name: "ApprovalForAll",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: false,
+              internalType: "bool",
+              name: "autoApproved",
+              type: "bool",
+            },
+          ],
+          name: "AutomaticApprovalOfTransferValidatorSet",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "previousOwner",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "newOwner",
+              type: "address",
+            },
+          ],
+          name: "OwnershipTransferred",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "from",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "Transfer",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: false,
+              internalType: "address",
+              name: "oldValidator",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "address",
+              name: "newValidator",
+              type: "address",
+            },
+          ],
+          name: "TransferValidatorUpdated",
+          type: "event",
+        },
+        {
+          inputs: [],
+          name: "DEFAULT_TRANSFER_VALIDATOR",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "FEE_DENOMINATOR",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "MAX_SUPPLY",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "approve",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "autoApproveTransfersFromValidator",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+          ],
+          name: "balanceOf",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "burn",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "creator",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "creatorShares",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "getApproved",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "getColors",
+          outputs: [
+            {
+              components: [
+                {
+                  internalType: "string",
+                  name: "leftHalf",
+                  type: "string",
+                },
+                {
+                  internalType: "string",
+                  name: "rightHalf",
+                  type: "string",
+                },
+              ],
+              internalType: "struct EthereumNorthStar.Colors",
+              name: "",
+              type: "tuple",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "getTransferValidationFunction",
+          outputs: [
+            {
+              internalType: "bytes4",
+              name: "functionSignature",
+              type: "bytes4",
+            },
+            {
+              internalType: "bool",
+              name: "isViewFunction",
+              type: "bool",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "getTransferValidator",
+          outputs: [
+            {
+              internalType: "address",
+              name: "validator",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "operator",
+              type: "address",
+            },
+          ],
+          name: "isApprovedForAll",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "isApproved",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "string",
+              name: "leftColor",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "rightColor",
+              type: "string",
+            },
+          ],
+          name: "mint",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          name: "mintedTokens",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "minterOf",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "minterShares",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "name",
+          outputs: [
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "owner",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "ownerOf",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "paymentSplitterOf",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "paymentSplitterReference",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "minter",
+              type: "address",
+            },
+          ],
+          name: "paymentSplittersOfMinter",
+          outputs: [
+            {
+              internalType: "address[]",
+              name: "",
+              type: "address[]",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "address",
+              name: "coin",
+              type: "address",
+            },
+            {
+              internalType: "enum MinterCreatorSharedRoyaltiesBase.ReleaseTo",
+              name: "releaseTo",
+              type: "uint8",
+            },
+          ],
+          name: "releasableERC20Funds",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "enum MinterCreatorSharedRoyaltiesBase.ReleaseTo",
+              name: "releaseTo",
+              type: "uint8",
+            },
+          ],
+          name: "releasableNativeFunds",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "address",
+              name: "coin",
+              type: "address",
+            },
+            {
+              internalType: "enum MinterCreatorSharedRoyaltiesBase.ReleaseTo",
+              name: "releaseTo",
+              type: "uint8",
+            },
+          ],
+          name: "releaseERC20Funds",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "enum MinterCreatorSharedRoyaltiesBase.ReleaseTo",
+              name: "releaseTo",
+              type: "uint8",
+            },
+          ],
+          name: "releaseNativeFunds",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "renounceOwnership",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "royaltyFeeNumerator",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "salePrice",
+              type: "uint256",
+            },
+          ],
+          name: "royaltyInfo",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "from",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "safeTransferFrom",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "from",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "bytes",
+              name: "data",
+              type: "bytes",
+            },
+          ],
+          name: "safeTransferFrom",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "operator",
+              type: "address",
+            },
+            {
+              internalType: "bool",
+              name: "approved",
+              type: "bool",
+            },
+          ],
+          name: "setApprovalForAll",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "bool",
+              name: "autoApprove",
+              type: "bool",
+            },
+          ],
+          name: "setAutomaticApprovalOfTransfersFromValidator",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "transferValidator_",
+              type: "address",
+            },
+          ],
+          name: "setTransferValidator",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "bytes4",
+              name: "interfaceId",
+              type: "bytes4",
+            },
+          ],
+          name: "supportsInterface",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "symbol",
+          outputs: [
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "tokenCounter",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "tokenURI",
+          outputs: [
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "from",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "transferFrom",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "newOwner",
+              type: "address",
+            },
+          ],
+          name: "transferOwnership",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+      ],
+      inheritedFunctions: {
+        owner:
+          "@limitbreak/creator-token-standards/src/access/OwnableBasic.sol",
+        renounceOwnership:
+          "@limitbreak/creator-token-standards/src/access/OwnableBasic.sol",
+        transferOwnership:
+          "@limitbreak/creator-token-standards/src/access/OwnableBasic.sol",
+        DEFAULT_TRANSFER_VALIDATOR:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        approve: "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        autoApproveTransfersFromValidator:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        balanceOf:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        getApproved:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        getTransferValidationFunction:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        getTransferValidator:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        isApprovedForAll:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        name: "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        ownerOf: "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        safeTransferFrom:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        setApprovalForAll:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        setAutomaticApprovalOfTransfersFromValidator:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        setTransferValidator:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        supportsInterface:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        symbol: "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        tokenURI: "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        transferFrom:
+          "@limitbreak/creator-token-standards/src/erc721c/ERC721C.sol",
+        FEE_DENOMINATOR:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        creator:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        creatorShares:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        minterOf:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        minterShares:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        paymentSplitterOf:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        paymentSplitterReference:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        paymentSplittersOfMinter:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        releasableERC20Funds:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        releasableNativeFunds:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        releaseERC20Funds:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        releaseNativeFunds:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        royaltyFeeNumerator:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
+        royaltyInfo:
+          "@limitbreak/creator-token-standards/src/programmable-royalties/MinterCreatorSharedRoyalties.sol",
       },
     },
     EthereumVision: {

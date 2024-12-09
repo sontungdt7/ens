@@ -15,10 +15,10 @@ const MyNFTs: NextPage = () => {
   const [leftColor, setLeftColor] = useState("#ffffff");
   const [rightColor, setRightColor] = useState("#000000");
 
-  const { writeContractAsync } = useScaffoldWriteContract("EthereumVision");
+  const { writeContractAsync } = useScaffoldWriteContract("EthereumNorthStar");
 
   const { data: tokenIdCounter } = useScaffoldReadContract({
-    contractName: "EthereumVision",
+    contractName: "EthereumNorthStar",
     functionName: "tokenCounter",
     watch: true,
   });
@@ -49,7 +49,7 @@ const MyNFTs: NextPage = () => {
     <>      
       <div className="card w-full max-w-3xl mx-auto ">
       <div className="card-body">        
-        <h2 className="card-title text-center justify-center">Design your Ethereum</h2>
+        <h2 className="card-title text-center justify-center">Design your Ethereum North Star</h2>
         <div className="flex flex-col  items-center justify-between gap-1">
           
           {/* Yin Yang Symbol */}
@@ -192,7 +192,7 @@ const MyNFTs: NextPage = () => {
           </div>        
         </div>        
         
-        <span className="block text-xl text-center">Minted: {tokenIdCounter?.toLocaleString()}/10,000 </span>
+        <span className="block text-xl text-center">Minted: {tokenIdCounter?.toLocaleString()}/7500 </span>
         </div>
          
       </div>

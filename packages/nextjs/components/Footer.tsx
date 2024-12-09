@@ -48,7 +48,7 @@ export const Footer = () => {
           <div className="flex justify-center items-center gap-2 text-sm w-full">
             <div className="text-center">
               <a href="https://x.com/0xstark/status/1863671777668264077" target="_blank" rel="noreferrer" className="link">
-                Origin from Josh Stark
+                Origin from Josh Stark's Design
               </a>
             </div>            
           </div>

@@ -41,7 +41,7 @@ export const menuLinks: HeaderMenuLink[] = [
 
   {
     label: "Collection on Opensea",
-    href: "https://testnets.opensea.io/collection/ethereum-vision-10",
+    href: "https://opensea.io/collection/ethereum-north-star-1",
     icon: <LinkIcon className="h-4 w-4" />,
     external: true,
   },
