@@ -13,6 +13,8 @@ import { ProgressBar } from "~~/components/scaffold-eth/ProgressBar";
 import { useNativeCurrencyPrice } from "~~/hooks/scaffold-eth";
 import { useGlobalState } from "~~/services/store/store";
 import { wagmiConfig } from "~~/services/web3/wagmiConfig";
+import {PrivyProvider} from '@privy-io/react-auth';
+import Providers from '../providers';
 
 const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
   const price = useNativeCurrencyPrice();
@@ -60,8 +62,10 @@ export const ScaffoldEthAppWithProviders = ({ children }: { children: React.Reac
         <RainbowKitProvider
           avatar={BlockieAvatar}
           theme={mounted ? (isDarkMode ? darkTheme() : lightTheme()) : lightTheme()}
-        >
-          <ScaffoldEthApp>{children}</ScaffoldEthApp>
+        >          
+          <PrivyProvider appId="cm2x2fms40073q3eojzwu57z2">            
+              <ScaffoldEthApp>{children}</ScaffoldEthApp>            
+          </PrivyProvider>
         </RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>

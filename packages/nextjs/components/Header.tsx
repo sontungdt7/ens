@@ -15,7 +15,10 @@ import {
   PhotoIcon,
 } from "@heroicons/react/24/outline";
 import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
+import { Balance, Address } from "~~/components/scaffold-eth";
+
 import { useOutsideClick } from "~~/hooks/scaffold-eth";
+import { usePrivy } from '@privy-io/react-auth';
 
 type HeaderMenuLink = {
   label: string;
@@ -111,8 +114,11 @@ export const HeaderMenuLinks = () => {
  * Site header
  */
 export const Header = () => {
+  const {login, logout, user, ready, authenticated,} = usePrivy();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const burgerMenuRef = useRef<HTMLDivElement>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   useOutsideClick(
     burgerMenuRef,
     useCallback(() => setIsDrawerOpen(false), []),
@@ -156,9 +162,59 @@ export const Header = () => {
           <HeaderMenuLinks />
         </ul>
       </div>
-      <div className="navbar-end flex-grow mr-4">
+      {/* <div className="navbar-end flex-grow mr-4">
         <RainbowKitCustomConnectButton />
         <FaucetButton />
+      </div> */}
+
+<div className="navbar-end">
+        {authenticated ? (
+          <div className="flex items-center space-x-4">
+            <button
+              className=""
+              onClick={() => setIsModalOpen(true)}
+            >
+              <Balance address={user?.wallet?.address as `0x${string}`} usdMode={false}/>
+            </button>
+
+            {/* Modal */}
+            {isModalOpen && (
+              <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+                <div className="bg-white rounded-lg p-6 shadow-lg w-96">
+                  <h2 className="text-lg font-bold mb-4">Account Details</h2>
+                  <div className="mb-4">
+                    <Address
+                      address={user?.wallet?.address as `0x${string}`}
+                      format="long"
+                      disableAddressLink
+                    />
+                  </div>
+                  <div className="flex justify-end space-x-4">
+                    <button
+                      className="btn btn-outline"
+                      onClick={() => setIsModalOpen(false)}
+                    >
+                      Close
+                    </button>
+                    <button
+                      className="btn btn-error"
+                      onClick={() => {
+                        logout();
+                        setIsModalOpen(false);
+                      }}
+                    >
+                      Logout
+                    </button>
+                  </div>
+                </div>  
+              </div>
+            )}
+          </div>
+        ) : (
+          <button className="" onClick={() => login()}>
+            Login
+          </button>
+        )}
       </div>
     </div>
   );

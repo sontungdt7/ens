@@ -14,7 +14,9 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.11",
+    "@privy-io/react-auth": "latest",
     "@rainbow-me/rainbowkit": "^2.0.2",
+    "@solana/web3.js": "^1.95.8",
     "@tanstack/react-query": "^5.28.6",
     "@uniswap/sdk-core": "^4.0.1",
     "@uniswap/v2-sdk": "^3.0.1",

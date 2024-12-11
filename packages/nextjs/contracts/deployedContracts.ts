@@ -2598,7 +2598,7 @@ const deployedContracts = {
       },
     },
     EthereumNorthStar: {
-      address: "0xEB6B6D6054cA3296c5da359d5784677A3A10443f",
+      address: "0x88fCB98b0eFb1D5Cb7fCEd546b0abdAc2FAca1C7",
       abi: [
         {
           inputs: [

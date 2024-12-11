@@ -182,13 +182,13 @@ const MyNFTs: NextPage = () => {
             </div>
           </div> 
           <div className="flex justify-center w-full">
-            {!isConnected || isConnecting ? (
+            {/* {!isConnected || isConnecting ? (
               <RainbowKitCustomConnectButton />
-            ) : (
+            ) : ( */}
               <button className="btn btn-secondary w-full" onClick={handleMintItem}>
                 Free Mint NFT
               </button>
-            )}
+            {/* )} */}
           </div>        
         </div>        
         
